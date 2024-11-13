@@ -1,0 +1,23 @@
+### MATLAB ###
+# Windows default autosave extension
+*.asv
+
+# Other Ignored files
+*.pdf
+*.pptx
+*snapshot*
+*.asv
+*.png
+*.csv
+**/~$*.xlsx
+*.~f1
+*.evsettings
+*.~rg
+*.db
+*.log
+
+# Include original CSV data files 
+!data/**/*.csv
+
+# Folders
+suff_stats/*
