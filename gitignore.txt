@@ -20,4 +20,5 @@
 !data/**/*.csv
 
 # Folders
-suff_stats/*
+suff_stats/behavioral/*
+suff_stats/*/*.mat
