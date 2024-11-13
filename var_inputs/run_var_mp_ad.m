@@ -10,7 +10,7 @@ close all
 
 warning('off','MATLAB:dispatcher:nameConflict')
 
-path = '/Users/tomyc/Dropbox (MIT)/mp_modelcnfctls/code/github_public/varplus';
+path = cd;%'/Users/tomyc/Dropbox (MIT)/mp_modelcnfctls/code/github_public/varplus';
 vintage = '';
 task = '/var_inputs';
 
