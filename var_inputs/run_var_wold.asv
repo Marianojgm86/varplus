@@ -115,7 +115,6 @@ bench_rot = chol(Sigma_u,'lower');
 % Wold IRFs
 
 IRF_Wold = zeros(n_y,n_y,IRF_hor); % row is variable, column is shock
-% Ref pag 27 kilian y lutkepohl. La primera IRF es una I.
 IRF_Wold(:,:,1) = eye(n_y);
 
 for l = 1:IRF_hor
