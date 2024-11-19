@@ -61,9 +61,12 @@ cholOomegaTilde = chol(OomegaTilde)'; % this matrix is used to draw B|Sigma belo
 
 % draws from posterior
 for i_draw = 1:n_draws
-    
+    % Inverse Wishart draw with covariance matrix PphiTilde and nnuTilde
+    % Degrees of freedom
     Sigmadraw     = iwishrnd(PphiTilde,nnuTilde);
+
     cholSigmadraw = chol(Sigmadraw)';
+    
     Bdraw         = kron(cholSigmadraw,cholOomegaTilde)*randn(m*n_var,1) + reshape(PpsiTilde,n_var*m,1);
     Bdraw         = reshape(Bdraw,n_var*n_lags+constant,n_var);
     
