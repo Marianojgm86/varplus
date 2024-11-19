@@ -120,7 +120,8 @@ IRF_Wold(:,:,1) = eye(n_y);
 % Funciones Impulso Respuesta - Matrices de coeficientes para la
 % Representacion MA
 for l = 1:IRF_hor
-    % Ref pagina 27 libro de Kilian y Lutkepohl
+    % Ref pagina 26 libro de Kilian y Lutkepohl.
+    % Suma Recursiva de IRFs
     if l < IRF_hor
         for j=1:min(l,n_lags)
             IRF_Wold(:,:,l+1) = IRF_Wold(:,:,l+1) + B(1+(j-1)*n_y:j*n_y,:)'*IRF_Wold(:,:,l-j+1);
@@ -131,7 +132,10 @@ end
 
 W = bench_rot;
 
-% get IRFs
+%% get IRFs
+% Reference Page 111 Kilian & Lutktepohl. 
+% Using as B = chol(Sigma_u) 
+% Uses the Cholesky decomposition to obtain structural IRFs?
 
 IRF_OLS = NaN(n_y,n_y,IRF_hor);
 for i_hor = 1:IRF_hor
@@ -142,7 +146,7 @@ end
 
 IS.Theta_OLS = squeeze(IRF_OLS);
 
-%----------------------------------------------------------------
+%% ----------------------------------------------------------------
 % Wold IRFs
 %----------------------------------------------------------------
 
@@ -221,7 +225,7 @@ for i_hor = 1:IRF_hor
     IS.cov = IS.cov + IS.Theta_OLS(:,:,i_hor) * IS.Theta_OLS(:,:,i_hor)';
 end
 
-% correlations
+%% correlations
 
 IS.corr = zeros(n_y,n_y);
 for i_y = 1:n_y
@@ -230,7 +234,7 @@ for i_y = 1:n_y
     end
 end
 
-% frequency bands
+%% frequency bands
 
 omega_1 = (2*pi)/32;
 omega_2 = (2*pi)/6;
