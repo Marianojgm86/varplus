@@ -104,7 +104,7 @@ T = size(vardata,1) - n_lags;
 % extract VAR inputs
 % Sigma_u es la matriz varianza - covarianza de los residuos de la forma reducida    
 Sigma_u   = Sigma_OLS;
-% B es
+% B es la matriz de coeficientes de la forma reducida
 B         = B_OLS;
 
 % benchmark rotation: since we need an arbitrary rotation, we just use
@@ -117,7 +117,8 @@ bench_rot = chol(Sigma_u,'lower');
 IRF_Wold = zeros(n_y,n_y,IRF_hor); % row is variable, column is shock
 % Ref pag 27 kilian y lutkepohl. La primera IRF es una I.
 IRF_Wold(:,:,1) = eye(n_y);
-
+% Funciones Impulso Respuesta - Matrices de coeficientes para la
+% Representacion MA
 for l = 1:IRF_hor
     % Ref pagina 27 libro de Kilian y Lutkepohl
     if l < IRF_hor
@@ -189,7 +190,7 @@ end
 
 % collect results
 
-%IS.Theta(:,:,:,i_draw) = squeeze(IRF_idraw);
+IS.Theta(:,:,:,i_draw) = squeeze(IRF_idraw);
 
 end
 
