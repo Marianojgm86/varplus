@@ -3,7 +3,7 @@
 % this version: 09/03/2024
 
 %% HOUSEKEEPING
- 
+run('pathdef.m'); 
 clc
 clear all
 close all
@@ -11,7 +11,7 @@ close all
 warning('off','MATLAB:dispatcher:nameConflict')
 warning('off','MATLAB:declareGlobalBeforeUse')
 
-path = '/Users/tomyc/Dropbox (MIT)/mp_modelcnfctls/code/github_public/varplus';
+path = 'C:\Users\mjgm2\OneDrive - University of Leicester\Documents\GitHub\varplus\varplus';
 vintage = '';
 
 addpath([path vintage '/_auxiliary_functions'])
