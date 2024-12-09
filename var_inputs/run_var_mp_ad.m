@@ -10,7 +10,7 @@ close all
 
 warning('off','MATLAB:dispatcher:nameConflict')
 
-path = '/Users/tomyc/Dropbox (MIT)/mp_modelcnfctls/code/github_public/varplus';
+path = 'C:\Users\USUARIO\OneDrive - University of Leicester\Documents\GitHub\varplus\varplus';
 vintage = '';
 task = '/var_inputs';
 
@@ -186,7 +186,7 @@ end
 for i_shock = 1:length(IS.shock_pos)
     IS.IRF_OLS(:,:,i_shock) = squeeze(IRF_OLS(:,IS.shock_pos(i_shock),:))';
 end
-
+%%
 %----------------------------------------------------------------
 % Confidence Set
 %----------------------------------------------------------------
