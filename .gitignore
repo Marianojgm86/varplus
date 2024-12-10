@@ -29,3 +29,10 @@ codegen/
 
 # Octave session info
 octave-workspace
+
+*.mat 
+/invertibility/sw_sequence/+SW_Model
+*.png
+*.DS_Store
+
+*.mat
